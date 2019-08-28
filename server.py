@@ -1,0 +1,1 @@
+from pyftpdlib.authorizers import DummyAuthorizer
