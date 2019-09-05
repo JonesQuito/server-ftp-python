@@ -2,7 +2,7 @@
 import socket
 
 # Dados de conexao ao servidor
-HOST = 'localhost'
+HOST = '192.168.1.104'
 PORT = 3000
 
 # Cria um objeto de conexão com ipv4 e protocolo tcp
@@ -14,8 +14,8 @@ client.connect((HOST, PORT))
 # Lê um arquivo em modo binario
 from server2 import FileHandler
 fileHandler = FileHandler()
-client.send('imageOriginal.jpg'.encode())
-buff = fileHandler.readBinaryBlockArray('envio.txt')
+client.send('arquivoteste.txt'.encode())
+buff = fileHandler.readBinaryBlockArray('arquivoteste.txt')
 
 
 for b in buff:

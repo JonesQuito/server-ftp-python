@@ -50,11 +50,11 @@ class FileHandler(object):
 
 
 
-fileHandler = FileHandler()
+#fileHandler = FileHandler()
 #fileHandler.readBinary()
 #fileHandler.writeBinary()
-result = fileHandler.readBinaryBlockArray('envio.txt')
-print(result[0])
+#result = fileHandler.readBinaryBlockArray('envio.txt')
+#print(result[0])
 
 
 '''

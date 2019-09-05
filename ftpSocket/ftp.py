@@ -10,10 +10,14 @@ class FtpClient(object):
     def upload(self, arrayBlock, filename):
         # Cria um objeto de conexão com ipv4 e protocolo tcp
         client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+        
         # Estabelece a comunicação com o servidor
+        print(self.host)
+        print(self.port)
+        print(client)
         client.connect((self.host, self.port))
-
+        print('Pós connect')
+        
         # Envia o nome do arquivo a ser criado no servidor
         client.send(filename.encode())
 
@@ -79,8 +83,7 @@ class FtpServer(object):
 
             self.countConn = self.countConn + 1
             file.close()
-            conn.close()
-            chanel.close()
+    
 
 
 
