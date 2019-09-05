@@ -24,7 +24,7 @@ class ClienteSocket(object):
 
 
 
-f = Funcionario('Jones', 'operador', 2500)
+f = Funcionario('Raimuno de Ameida', 'operador', 1500)
 clientSocket = ClienteSocket('192.168.1.104', 3000)
 
 fs = pickle.dumps(f)
