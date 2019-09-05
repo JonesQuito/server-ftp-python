@@ -1,4 +1,5 @@
 import socket
+import pickle
 from models.funcionario import Funcionario
 
 # Declara as constantes de conexao
@@ -18,18 +19,20 @@ chanel.bind((HOST, PORT))
 chanel.listen(3)
 
 # Define um limite máximo para conexoes
-MAX_CONN = 5
+MAX_CONN = 20
 countConn = 0
 
 # Entra em loop para receber várias conexões
+while countConn < MAX_CONN:
+    countConn += 1
 
-conn, client = chanel.accept()
-print('O cliente ' + str(client) + ' estabeleceu conexão')   
+    conn, client = chanel.accept()
+    print('O cliente ' + str(client) + ' estabeleceu conexão')   
 
-content = conn.recv(1024)
-import pickle
-funcionario = pickle.loads(content)
-print(funcionario.toString())
-conn.send(pickle.dumps(funcionario.toString()))
+    content = conn.recv(1024)
+
+    funcionario = pickle.loads(content)
+    print(funcionario.toString())
+    conn.send(pickle.dumps(funcionario.toString()))
 
     
