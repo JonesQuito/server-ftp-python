@@ -36,15 +36,19 @@ class ClienteSocket(object):
         except Exception as e:
             return e
 
+    def recebe(self):
+        return self.client.recv(1024)
+
 
 
 
 
 f = Funcionario('Jones', 'programador', 2500)
-clientSocket = ClienteSocket('localhost', 3000)
+clientSocket = ClienteSocket('192.168.1.104', 3000)
 
 fs = pickle.dumps(f)
 clientSocket.enviar(fs)
+print(pickle.loads(clientSocket.recebe()))
 
 #fs = pickle.loads(fs)
 #print(fs.toString())
