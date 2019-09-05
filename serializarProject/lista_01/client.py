@@ -1,7 +1,7 @@
+
 # Importando bibliotecas necessárias
 import pickle
 import socket
-
 from models.funcionario import Funcionario
 
 
@@ -24,9 +24,7 @@ class ClienteSocket(object):
 
 
 
-
-
-f = Funcionario('Jones', 'programador', 2500)
+f = Funcionario('Jones', 'operador', 2500)
 clientSocket = ClienteSocket('192.168.1.104', 3000)
 
 fs = pickle.dumps(f)

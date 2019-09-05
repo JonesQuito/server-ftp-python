@@ -30,5 +30,6 @@ content = conn.recv(1024)
 import pickle
 funcionario = pickle.loads(content)
 print(funcionario.toString())
+conn.send(pickle.dumps(funcionario.toString()))
 
     
